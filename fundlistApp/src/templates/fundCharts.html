@@ -1,10 +1,42 @@
-<div ng-if="model.shareClass != 'All'" class="panel-body" ng-controller="chartCtrl">
+<div ng-if="model.shareClass != 'All'" class="panel-body charts">
   <div class="pull-left">
-    <a ng-click="toggleChart = !toggleChart"> <span class="text-primary">{{ (toggleChart ?  '- HIDE' : '+ SHOW') + ' PERFORMANCE & DOCUMENTS' }}</span></a>
+    <a ng-click="toggleChart = !toggleChart; isChartLoaded=true"> <span class="text-primary">{{ (toggleChart ?  '- HIDE' : '+ SHOW') + ' PERFORMANCE & DOCUMENTS' }}</span></a>
   </div>
   <div class="pull-right">
-    <a ng-click="toggleWatchlist = !toggleWatchlist"><span class="text-primary"><strong><span class="glyphicon {{ toggleWatchlist ? 'glyphicon-star-empty' : 'glyphicon-star' }}"></span> {{ toggleWatchlist ? 'ADD' : 'REMOVE'  }} TO WATCHLIST</strong></span></a> |
+    <a ng-click="toggleWatchlist = !toggleWatchlist"><span class="text-primary"><strong><span
+      class="glyphicon {{ !toggleWatchlist ? 'glyphicon-star-empty' : 'glyphicon-star' }}"></span> {{ !toggleWatchlist ?
+      'ADD TO' : 'REMOVE FROM' }} WATCHLIST</strong></span></a> |
     <a><span class="text-primary"><strong>VIEW FACTSHEET</strong></span></a>
   </div>
-  <line-chart ng-if="toggleChart" ng-model="chartData"></line-chart>
+  <div class="row" ng-if="isChartLoaded" ng-show="!!toggleChart" ng-controller="chartCtrl">
+    <div class="col-xs-12">
+      <hr/>
+    </div>
+    <line-chart class="col-md-9 col-sm-12" ng-model="chartData"></line-chart>
+    <div class="col-md-3 col-sm-12">
+      <div class="row">
+        <div class="col-md-12 col-sm-6">
+          <h5 class="text-muted"><strong>Cumulative Performance since Inception.</strong></h5>
+      <span class="perf">
+        50%
+      <hr/>
+      </span>
+        </div>
+        <div class="col-md-12 col-sm-6">
+          <a ng-href="" target="_blank"><h5 class="text-primary"><strong><span class="glyphicon glyphicon-file"></span>
+            FACTSHEET</strong></h5></a>
+          <a ng-href="" target="_blank"><h5 class="text-primary"><strong><span class="glyphicon glyphicon-file"></span>
+            FULL PROSPECTUS</strong></h5></a>
+          <a ng-href="" target="_blank"><h5 class="text-primary"><strong><span class="glyphicon glyphicon-file"></span>
+            ANNUAL REPORT</strong></h5></a>
+          <a ng-href="" target="_blank"><h5 class="text-primary"><strong><span class="glyphicon glyphicon-file"></span>
+            INTERIM REPORT</strong></h5></a>
+          <a ng-href="" target="_blank"><h5 class="text-primary"><strong><span class="glyphicon glyphicon-file"></span>
+            KIID</strong></h5></a>
+          <a ng-href="" target="_blank"><h5 class="text-primary"><strong><span class="glyphicon glyphicon-file"></span>
+            VIEW FACTSHEET</strong></h5></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,8 +1,8 @@
-<div ng-if="model.shareClass == 'All'" class="panel-body">
+<div ng-if="model.shareClass == 'All'" class="panel-body allClasses">
   <div class="row">
-    <div class="col-xs-12" ng-repeat="sClass in fund.shareClasses">
+    <div class="col-xs-12" ng-repeat="sClass in fund.shareClasses" ng-if="currentClass['ISIN Code'] !== sClass['ISIN Code']">
       <div class="row">
-        <div class="col-sm-4 col-xs-12">
+        <div class="col-md-4 col-sm-12">
           <div class="list-unstyled">
             <li>
               <div class="row">
@@ -28,7 +28,7 @@
 
           </div>
         </div>
-        <div class="col-sm-5 col-xs-12">
+        <div class="col-md-4 col-sm-12">
           <div class="list-unstyled">
             <li>
               <div class="row">
@@ -36,7 +36,7 @@
                   <span>Launch Date</span>
                 </div>
                 <div class="col-xs-6">
-                  <span>{{ sClass['Launch Date'] }}</span>
+                  <span>{{ sClass['Launch Date'] | dateFormat: 'MM/dd/yyyy' }}</span>
                 </div>
               </div>
             </li>
@@ -54,7 +54,7 @@
 
           </div>
         </div>
-        <div class="col-sm-3 col-xs-12">
+        <div class="col-md-4 col-sm-12">
           <div class="list-unstyled">
             <li>
               <div class="row">
@@ -62,7 +62,7 @@
                   <span>Yield</span>
                 </div>
                 <div class="col-xs-6">
-                  <span>{{ sClass['Yield Current'] || '-' }}</span>
+                  <span>{{ sClass['Yield Current'] | percentage }}</span>
                 </div>
               </div>
             </li>
@@ -73,7 +73,7 @@
                   <span>Date</span>
                 </div>
                 <div class="col-xs-6">
-                  <span>{{ sClass['Last Update'] }}</span>
+                  <span>{{ sClass['Last Update'] | dateFormat: 'dd MMM yyyy' }}</span>
                 </div>
               </div>
             </li>
@@ -84,7 +84,7 @@
                   <span>NAV</span>
                 </div>
                 <div class="col-xs-6">
-                  <span>{{ sClass['Price NAV'] }}</span>
+                  <span>{{ sClass['Price NAV'] | currency:"" }}</span>
                 </div>
               </div>
             </li>

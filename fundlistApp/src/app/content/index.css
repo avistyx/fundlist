@@ -6,7 +6,15 @@ body {
   border: 6px solid #ccc;
 }
 
+li {
+  padding: 5px;
+}
+
 li:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.allClasses li:first-of-type {
   background-color: #ddd;
 }
 
@@ -31,6 +39,16 @@ li:nth-child(odd) {
   font-size: 15px
 }
 
-.glyphicon-star {
+.charts .glyphicon-star {
   color: darkorange;
+}
+
+span.perf {
+  color: saddlebrown;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+span.perf hr {
+  margin-top: 0;
 }
