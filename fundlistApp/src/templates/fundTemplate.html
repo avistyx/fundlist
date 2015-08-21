@@ -1,0 +1,161 @@
+<div class="panel panel-clear" ng-click="toggleChart = !toggleChart">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-xs-6">
+        <h3 class="text-primary">{{ fund.name }}</h3>
+        {{ fund['Legal Structure Taxonomy Id'] }}
+      </div>
+      <div class="col-xs-6">
+        <div class="col-xs-4 text-right">
+          <span>Share Class</span>
+        </div>
+        <div class="col-xs-8">
+          <select name="shareClass" ng-model="model.shareClass" class="form-control">
+            <option selected="selected" label="All">All</option>
+            <option ng-repeat="shareClass in fund.shareClasses" >{{ shareClass['Short Name'] }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-4 col-xs-12">
+        <div class="list-unstyled">
+          <li ng-if="model.shareClass == 'All'">
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Share Class</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['Short Name'] }}</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>ISIN</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['ISIN Code'] }}</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Currency</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['Fund Currency Code'] }}</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Asset Class</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['ISIN Code'] }}</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Region</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['ISIN Code'] }}</span>
+              </div>
+            </div>
+          </li>
+
+        </div>
+      </div>
+      <div class="col-sm-5 col-xs-12">
+        <div class="list-unstyled">
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Launch Date</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['Launch Date'] }}</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Fund Size</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['ISIN Code'] }}</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Morningstar Ratings</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['ISIN Code'] }}</span>
+              </div>
+            </div>
+          </li>
+
+        </div>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <div class="list-unstyled">
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Yield</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['Yield Current'] || '-' }}</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>Date</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['Last Update'] }}</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="row">
+              <div class="col-xs-6">
+                <span>NAV</span>
+              </div>
+              <div class="col-xs-6">
+                <span>{{ currentClass['Price NAV'] }}</span>
+              </div>
+            </div>
+          </li>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-include src="'templates/fundAllClasses.html'"></ng-include>
+  <ng-include src="'templates/fundCharts.html'"></ng-include>
+</div>

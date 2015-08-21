@@ -1,0 +1,10 @@
+<div ng-if="model.shareClass != 'All'" class="panel-body" ng-controller="chartCtrl">
+  <div class="pull-left">
+    <a ng-click="toggleChart = !toggleChart"> <span class="text-primary">{{ (toggleChart ?  '- HIDE' : '+ SHOW') + ' PERFORMANCE & DOCUMENTS' }}</span></a>
+  </div>
+  <div class="pull-right">
+    <a ng-click="toggleWatchlist = !toggleWatchlist"><span class="text-primary"><strong><span class="glyphicon {{ toggleWatchlist ? 'glyphicon-star-empty' : 'glyphicon-star' }}"></span> {{ toggleWatchlist ? 'ADD' : 'REMOVE'  }} TO WATCHLIST</strong></span></a> |
+    <a><span class="text-primary"><strong>VIEW FACTSHEET</strong></span></a>
+  </div>
+  <line-chart ng-if="toggleChart" ng-model="chartData"></line-chart>
+</div>

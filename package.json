@@ -1,0 +1,29 @@
+{
+  "name": "fundlist",
+  "version": "1.0.0",
+  "description": "Kurtosys test app",
+  "main": "index.js",
+  "dependencies": {
+    "generator-gulp-angular": "^0.12.1",
+    "yo": "^1.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avistyx/fundlist.git"
+  },
+  "keywords": [
+    "angular",
+    "d3",
+    "fundlist"
+  ],
+  "author": "Avi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avistyx/fundlist/issues"
+  },
+  "homepage": "https://github.com/avistyx/fundlist#readme"
+}
