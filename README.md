@@ -16,7 +16,11 @@ npm install -g generator-gulp-angular
 
 ### Run
 
-##### go into app folder and perform an npm install
+##### go into app folder and perform an `npm install`
+```
+cd fundlistApp
+npm install
+```
 
 ##### Run `gulp serve`
 ```
