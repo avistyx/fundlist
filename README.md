@@ -1,5 +1,28 @@
 # KURTOSYS Front-end test
 
+#### Usage
+### Install
+
+##### Install required tools `yo`, `gulp` and `bower`:
+```
+npm install -g yo gulp bower
+```
+
+##### Install `generator-gulp-angular`:
+```
+npm install -g generator-gulp-angular
+```
+
+
+### Run
+
+##### go into app folder and perform an npm install
+
+##### Run `gulp serve`
+```
+gulp serve
+```
+
 # The task
 Create an angular application which shows the fund and *share class*es information on a page
 The page should have a list of funds where each fund has a dropdown to change *share class* on that specific fund. By default, the first *share class* is selected.

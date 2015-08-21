@@ -2,8 +2,14 @@
 angular.module('fundlistApp', ['ui.utils'])
   .controller('MainController', ['$scope', '$http', 'cfLocation',
     function ($scope, $http, cfLocation) {
+      //can be bound to some ng-model on the page or add watch eventually
+      $scope.someParam = {
+        param: 'un',
+        param2: 'deux',
+        param3: 'trois'
+      };
 
-      $http.get(cfLocation.encodeUrl('https://raw.githubusercontent.com/avistyx/fundlist/master/data/funds.json', {}))
+      $http.get(cfLocation.encodeUrl('https://raw.githubusercontent.com/mihaly-alberti-kurtosys/fundlist/master/data/funds.json', $scope.someParam))
         .success(function (response) {
           $scope.funds = response.funds;
         });
@@ -26,7 +32,7 @@ angular.module('fundlistApp', ['ui.utils'])
         };
 
         if (!/notvalid/i.test(param.ISIN)) {
-          $http.get(cfLocation.encodeUrl('https://raw.githubusercontent.com/avistyx/fundlist/master/data/chart.json', param))
+          $http.get(cfLocation.encodeUrl('https://raw.githubusercontent.com/mihaly-alberti-kurtosys/fundlist/master/data/chart.json', param))
             .success(function (result) {
               $scope.chartData = result.chart;
             });
