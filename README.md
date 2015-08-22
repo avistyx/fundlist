@@ -13,18 +13,28 @@ npm install -g yo gulp bower
 npm install -g generator-gulp-angular
 ```
 
+### App tools install
 
-### Run
-
-##### go into app folder and perform an `npm install`
+##### go into app folder and perform an `npm install` and a `bower install`
 ```
 cd fundlistApp
 npm install
+bower install
 ```
 
-##### Run `gulp serve`
+### Run
+
+##### Run `gulp serve` to view in browser with unminified source code
 ```
 gulp serve
+```
+
+##### OR
+ 
+##### if build is required run `gulp build` and to view run `gulp serve:dist`
+```
+gulp build
+gulp serve:dist
 ```
 
 # The task
@@ -77,5 +87,5 @@ You can use any kind of `yeoman` generator to create the structure, like:
 - Commit as many states as you can while developing
 - Send only the link to your repository. **DON'T CREATE A PULL-REQUEST!**
 
-### gl;hf :)
+### gl;hf :) - tl;bi :)
 
