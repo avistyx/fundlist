@@ -1,0 +1,54 @@
+body {
+  color: #6d6e71 !important;
+}
+
+.panel.panel-clear {
+  border: 6px solid #ccc;
+}
+
+li {
+  padding: 5px;
+}
+
+li:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.allClasses li:first-of-type {
+  background-color: #ddd;
+}
+
+.panel.panel-clear .panel-body .text-right {
+  padding-top:25px;
+}
+
+.panel.panel-clear .panel-body {
+  border-bottom: 1px solid #ccc;
+}
+
+.panel.panel-clear .panel-heading {
+  border-bottom: 1px solid #ccc;
+}
+
+.panel.panel-clear .panel-heading h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.glyphicon {
+  font-size: 15px
+}
+
+.charts .glyphicon-star {
+  color: darkorange;
+}
+
+span.perf {
+  color: saddlebrown;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+span.perf hr {
+  margin-top: 0;
+}
