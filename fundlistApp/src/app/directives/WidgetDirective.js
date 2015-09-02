@@ -1,6 +1,6 @@
 ﻿"use strict";
 angular.module('fundApp.widget', [])
- /**
+    /**
      * @description
      * directive to generate widget
      * purpose is to make code cleaner and easier to understand
