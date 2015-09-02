@@ -3,18 +3,6 @@
 #### Usage
 ### Install
 
-##### Install required tools `yo`, `gulp` and `bower`:
-```
-npm install -g yo gulp bower
-```
-
-##### Install `generator-gulp-angular`:
-```
-npm install -g generator-gulp-angular
-```
-
-### App tools install
-
 ##### go into app folder and perform an `npm install` and a `bower install`
 ```
 cd fundlistApp

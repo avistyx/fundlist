@@ -35,7 +35,8 @@ gulp.task('html', ['inject', 'partials'], function () {
 
   var htmlFilter = $.filter('*.html');
   var jsFilter = $.filter('**/*.js');
-  var cssFilter = $.filter('**/*.css');
+  var cssFilter = $.filter('**/*.css')
+     
   var assets;
 
   return gulp.src(path.join(conf.paths.tmp, '/serve/*.html'))
@@ -47,6 +48,9 @@ gulp.task('html', ['inject', 'partials'], function () {
     .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', conf.errorHandler('Uglify'))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
+    .pipe($.uncss({
+        html: [ path.join(conf.paths.src, '/**/*.html'), ]
+     }))
     .pipe($.csso())
     .pipe(cssFilter.restore())
     .pipe(assets.restore())
