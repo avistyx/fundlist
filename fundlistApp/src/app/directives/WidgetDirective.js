@@ -8,7 +8,7 @@ angular.module('fundApp.widget', [])
   .directive('fundWidget', function () {
       return {
           restrict: 'AE',
-          templateUrl: 'app/templates/fundTemplate.html',
+          templateUrl: 'app/views/fundTemplate.html',
           controller: function ($scope, $attrs, $interpolate) {
               if ($attrs.ngModel === void 0) {
                   throw "ngModel not defined";
